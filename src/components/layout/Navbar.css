@@ -1,0 +1,186 @@
+/* ─── Navbar ─────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 12px;
+  left: 24px;
+  right: 24px;
+  z-index: 100;
+  border-radius: 20px;
+  padding: 0 var(--space-6);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 4px 24px rgba(4, 34, 62, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 -1px 0 rgba(4, 34, 62, 0.04) inset;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
+  border-color: rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 8px 32px rgba(4, 34, 62, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 rgba(4, 34, 62, 0.05) inset;
+}
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* ─── Logo ───────────────────────────────────────────── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  opacity: 0.8;
+}
+
+/* ─── Desktop Links ──────────────────────────────────── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.navbar__link {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--transition-fast);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* ─── Actions ────────────────────────────────────────── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar__resume {
+  font-size: var(--font-size-sm);
+  padding: 0.5rem 1.1rem;
+}
+
+/* ─── Hamburger ──────────────────────────────────────── */
+.navbar__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  transition: background var(--transition-fast);
+}
+
+.navbar__hamburger:hover {
+  background: var(--color-surface);
+}
+
+/* ─── Mobile Menu ────────────────────────────────────── */
+.navbar__mobile {
+  position: fixed;
+  top: 80px;
+  left: 24px;
+  right: 24px;
+  z-index: 99;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 8px 32px rgba(4, 34, 62, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  padding: var(--space-6);
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.navbar__mobile-link {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color var(--transition-fast);
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-accent);
+}
+
+.navbar__mobile-resume {
+  margin-top: var(--space-2);
+  align-self: flex-start;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__resume {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+}

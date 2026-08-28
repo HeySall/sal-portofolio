@@ -1,0 +1,122 @@
+/* ─── Hero ───────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url('/bg-hero.png') center center / cover no-repeat;
+  z-index: 0;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: var(--space-32);
+}
+
+.hero__content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* ─── Location Badge ─────────────────────────────────── */
+.hero__location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* ─── Headline ───────────────────────────────────────── */
+.hero__headline {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #04223E;
+}
+
+.hero__headline-line {
+  display: inline;
+}
+
+.hero__italic {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 64px;
+  color: #04223E;
+}
+
+/* ─── Bio ─────────────────────────────────────────────── */
+.hero__bio {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 32px;
+  color: #667085;
+  text-align: center;
+  max-width: 752px;
+}
+
+/* ─── CTAs ────────────────────────────────────────────── */
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+/* ─── Scroll Hint ─────────────────────────────────────── */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: var(--space-10);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero__container {
+    padding-top: 100px;
+    padding-bottom: var(--space-24);
+  }
+
+  .hero__headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .hero__italic {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .hero__bio {
+    font-size: var(--font-size-base);
+  }
+}
