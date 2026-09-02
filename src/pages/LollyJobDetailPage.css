@@ -355,8 +355,23 @@
 
 /* ─── Responsive ─────────────────────────────────────── */
 @media (max-width: 900px) {
-  .lj__hero-inner { grid-template-columns: 1fr; }
-  .lj__hero-right { display: none; }
+  .lj__hero-inner {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    gap: var(--space-4);
+  }
+  .lj__hero-right {
+    display: flex;
+    justify-content: center;
+    order: 1;
+  }
+  .lj__hero-mockup {
+    max-height: 280px;
+    width: auto;
+  }
+  .lj__hero-left { order: 2; padding-bottom: var(--space-8); }
   .lj__two-col-header { grid-template-columns: 1fr; }
   .lj__features-grid { grid-template-columns: repeat(2, 1fr); }
   .lj__challenge-cards { grid-template-columns: 1fr; }
@@ -372,10 +387,76 @@
   .lj__connector-side { display: none; }
 }
 
+@media (max-width: 768px) {
+  .lj__hero {
+    padding: 80px 0 0;
+  }
+
+  .lj__hero-inner {
+    padding: 0 var(--space-6);
+  }
+
+  .lj__wrap {
+    padding: 0 var(--space-6) var(--space-16);
+  }
+
+  .lj__section {
+    padding: var(--space-8) 0;
+    gap: var(--space-4);
+  }
+
+  .lj__section--surface {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  /* Connector center */
+  .lj__connector-center {
+    min-width: unset;
+    width: 100%;
+    padding: var(--space-6);
+  }
+  .lj__challenge-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Business impact (features-grid 4 col) → 2 kolom */
+  .lj__features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    overflow: hidden;
+  }
+
+  /* AI deep dive simple → ditangani di bawah file setelah rule global */
+
+  /* Reflection: gambar di atas, teks di bawah */
+  .lj__reflection {
+    padding: var(--space-8) var(--space-6) !important;
+  }
+
+  .lj__reflection-inner {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6);
+  }
+
+  .lj__reflection-mockup {
+    max-width: 240px;
+    margin: 0 auto;
+    order: 1;
+  }
+
+  .lj__reflection-content {
+    order: 2;
+  }
+}
+
 @media (max-width: 480px) {
-  .lj__wrap { padding: 0 var(--space-5) var(--space-16); }
+  .lj__wrap { padding: 0 var(--space-4) var(--space-12); }
+  .lj__hero-inner { padding: 0 var(--space-4); }
+  .lj__hero-meta { grid-template-columns: 1fr 1fr; }
   .lj__features-grid { grid-template-columns: 1fr; }
-  .lj__hero-meta { grid-template-columns: 1fr; }
+  .lj__section--surface { padding: var(--space-6) var(--space-4); }
+  .lj__reflection { padding: var(--space-6) var(--space-4) !important; }
+  .lj__thankyou-content { padding: var(--space-8) var(--space-4); }
+  .lj__connector-center { min-width: unset; padding: var(--space-6); }
 }
 
 /* ─── Connector ──────────────────────────────────────── */
@@ -528,8 +609,8 @@
 }
 
 .lj__ai-deep-box--simple .lj__ai-deep-mockup img {
-  width: 120%;
-  max-width: 120%;
+  width: 100%;
+  max-width: 100%;
   border-radius: var(--radius-md);
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: zoom-in;
@@ -537,6 +618,42 @@
 
 .lj__ai-deep-box--simple .lj__ai-deep-mockup:hover img {
   transform: scale(1.06);
+}
+
+/* ─── Prevent horizontal overflow globally ───────────── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.lj, .lj__wrap, .lj__hero, .lj__section, .lj__section--surface {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .lj__ai-deep-box--simple {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: unset !important;
+    gap: var(--space-6) !important;
+    align-items: unset !important;
+  }
+
+  .lj__ai-deep-box--simple .lj__ai-deep-mockup {
+    order: -1 !important;
+    justify-content: center;
+  }
+
+  .lj__ai-deep-box--simple .lj__ai-deep-mockup img {
+    width: 75% !important;
+    max-width: 260px !important;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .lj__ai-deep-box--simple .lj__ai-deep-left {
+    order: 0 !important;
+  }
 }
 
 /* ─── Employer features fix ──────────────────────────── */

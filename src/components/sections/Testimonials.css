@@ -146,9 +146,14 @@
 @media (max-width: 600px) {
   .testimonials__text {
     font-size: 0.95rem;
+    line-height: 1.65;
   }
 
   .testimonials__slide-area {
-    min-height: 220px;
+    min-height: 260px;
+  }
+
+  .testimonials__inner {
+    gap: var(--space-6);
   }
 }

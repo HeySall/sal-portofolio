@@ -158,6 +158,11 @@
   .footer__headline {
     font-size: clamp(1.8rem, 7vw, 2.5rem);
   }
+
+  .footer__links {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
 }
 
 @media (max-width: 480px) {
@@ -165,5 +170,10 @@
     flex-direction: column;
     gap: var(--space-2);
     text-align: center;
+  }
+
+  .footer .container {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
   }
 }

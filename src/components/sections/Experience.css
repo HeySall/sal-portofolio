@@ -43,9 +43,6 @@
 .experience__item:hover {
   background: #F9F9FC;
   border-radius: var(--radius-sm);
-  margin: 0 calc(-1 * var(--space-4));
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
 }
 
 /* ─── Columns ────────────────────────────────────────── */
@@ -103,17 +100,41 @@
 
 @media (max-width: 600px) {
   .experience__item {
-    grid-template-columns: 1fr auto;
-    gap: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-5) 0;
   }
 
   .experience__period {
-    grid-column: 1 / -1;
     font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    text-align: left;
+  }
+
+  .experience__role {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    word-break: break-word;
+    text-align: left;
   }
 
   .experience__desc {
-    grid-column: 1 / -1;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    text-align: left;
+  }
+
+  .experience__location {
+    align-items: flex-end;
+    text-align: right;
+    align-self: flex-end;
+    margin-top: var(--space-1);
+  }
+
+  .experience__location span:first-child {
+    font-size: var(--font-size-xs);
   }
 
   .experience__item:hover {

@@ -78,6 +78,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -212,6 +213,54 @@ button {
   height: 1px;
   background: var(--color-border);
   width: 100%;
+}
+
+/* ─── Responsive Globals ─────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .container {
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+/* Back button extracted for detail pages — tidak dipakai, sembunyikan */
+.au__back--top,
+.dg__back-text--top,
+.lj__back--top,
+.cd__back--top {
+  display: none !important;
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  a, button, [role="button"], input, textarea, select, label {
+    cursor: auto;
+  }
+}
+
+/* Hide cursor when mobile menu is open */
+body.mobile-menu-open .cursor-dot,
+body.mobile-menu-open .cursor-ring,
+body.mobile-menu-open .cursor-label {
+  opacity: 0 !important;
+  pointer-events: none;
 }
 
 /* ─── Scrollbar ───────────────────────────────────────── */

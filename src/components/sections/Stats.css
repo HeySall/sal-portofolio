@@ -92,7 +92,14 @@
 
 @media (max-width: 600px) {
   .stats__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 400px) {
+  .stats__cards {
     grid-template-columns: 1fr;
-    gap: var(--space-8);
+    gap: var(--space-6);
   }
 }

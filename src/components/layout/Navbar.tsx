@@ -37,6 +37,16 @@ export default function Navbar() {
     }
   }
 
+  // Hide custom cursor when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.classList.add('mobile-menu-open')
+    } else {
+      document.body.classList.remove('mobile-menu-open')
+    }
+    return () => document.body.classList.remove('mobile-menu-open')
+  }, [mobileOpen])
+
   return (
     <>
       <motion.header

@@ -598,22 +598,100 @@
 
 /* ─── Responsive ─────────────────────────────────────── */
 @media (max-width: 900px) {
-  .au__hero-inner { grid-template-columns: 1fr; }
-  .au__hero-right { display: none; }
+  .au__hero-inner {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .au__hero-right {
+    display: flex;
+    justify-content: center;
+    order: 1;
+  }
+  .au__hero-mockup {
+    max-height: 280px;
+    width: auto;
+  }
+  .au__hero-left {
+    order: 2;
+  }
   .au__dd-grid { grid-template-columns: 1fr; }
   .au__bs-header { grid-template-columns: 1fr; }
   .au__cards-grid { grid-template-columns: 1fr; }
   .au__flow { grid-template-columns: repeat(3, 1fr); }
 }
 
+@media (max-width: 768px) {
+  .au__hero {
+    padding: 80px 0 var(--space-8);
+  }
+
+  .au__hero-inner {
+    padding: 0 var(--space-6);
+    min-height: auto;
+    gap: var(--space-6);
+  }
+
+  .au__wrap {
+    padding: 0 var(--space-6) var(--space-16);
+  }
+
+  .au__section {
+    padding: var(--space-8) 0;
+    gap: var(--space-4);
+  }
+
+  .au__mood-grid {
+    grid-template-rows: 110px 90px;
+  }
+}
+
 @media (max-width: 600px) {
-  .au__steps-grid { grid-template-columns: 1fr 1fr; }
+  .au__steps-grid { grid-template-columns: 1fr; }
+
+  /* Reset semua border override dari 3-col, lalu set ulang untuk 1 col */
+  .au__step {
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+  .au__step:last-child {
+    border-bottom: none !important;
+  }
+
   .au__flow { grid-template-columns: repeat(2, 1fr); }
-  .au__final-grid { grid-template-columns: 1fr; }
   .au__final-img--0 { grid-row: auto; }
   .au__final-img--3 { grid-column: auto; }
+  .au__hero-meta { grid-template-columns: 1fr 1fr; }
+  .au__bs-desc { padding-top: 0; }
   .au__strip { height: 220px; }
   .au__strip-img--0 { width: 220px; height: 170px; left: -10px; }
   .au__strip-img--1 { width: 240px; height: 180px; }
   .au__strip-img--2 { width: 220px; height: 170px; right: -10px; }
+}
+
+@media (max-width: 480px) {
+  .au__hero-inner {
+    padding: 0 var(--space-4);
+  }
+
+  .au__wrap {
+    padding: 0 var(--space-4) var(--space-12);
+  }
+
+  .au__hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .au__flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .au__section-title {
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+  }
+
+  .au__thankyou-content {
+    padding: var(--space-8) var(--space-4);
+  }
 }
