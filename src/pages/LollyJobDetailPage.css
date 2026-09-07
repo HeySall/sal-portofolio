@@ -626,9 +626,13 @@ html, body {
   max-width: 100%;
 }
 
-.lj, .lj__wrap, .lj__hero, .lj__section, .lj__section--surface {
+/* ─── Prevent horizontal overflow ───────────────────── */
+.lj, .lj__hero, .lj__section, .lj__section--surface {
   overflow-x: hidden;
-  max-width: 100%;
+}
+
+.lj__wrap {
+  overflow-x: hidden;
 }
 @media (max-width: 768px) {
   .lj__ai-deep-box--simple {
