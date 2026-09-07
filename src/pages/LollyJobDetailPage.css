@@ -393,27 +393,27 @@
   }
 
   .lj__hero-inner {
-    padding: 0 var(--space-6);
+    padding: 0 var(--space-8);
   }
 
   .lj__wrap {
-    padding: 0 var(--space-6) var(--space-16);
+    padding: 0 var(--space-8) var(--space-20);
   }
 
   .lj__section {
-    padding: var(--space-8) 0;
-    gap: var(--space-4);
+    padding: var(--space-12) 0;
+    gap: var(--space-6);
   }
 
   .lj__section--surface {
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-10) var(--space-8);
   }
 
   /* Connector center */
   .lj__connector-center {
     min-width: unset;
     width: 100%;
-    padding: var(--space-6);
+    padding: var(--space-8);
   }
   .lj__challenge-cards {
     grid-template-columns: 1fr !important;
@@ -429,7 +429,7 @@
 
   /* Reflection: gambar di atas, teks di bawah */
   .lj__reflection {
-    padding: var(--space-8) var(--space-6) !important;
+    padding: var(--space-10) var(--space-8) !important;
   }
 
   .lj__reflection-inner {
@@ -449,13 +449,13 @@
 }
 
 @media (max-width: 480px) {
-  .lj__wrap { padding: 0 var(--space-4) var(--space-12); }
-  .lj__hero-inner { padding: 0 var(--space-4); }
+  .lj__wrap { padding: 0 var(--space-6) var(--space-16); }
+  .lj__hero-inner { padding: 0 var(--space-6); }
   .lj__hero-meta { grid-template-columns: 1fr 1fr; }
   .lj__features-grid { grid-template-columns: 1fr; }
-  .lj__section--surface { padding: var(--space-6) var(--space-4); }
-  .lj__reflection { padding: var(--space-6) var(--space-4) !important; }
-  .lj__thankyou-content { padding: var(--space-8) var(--space-4); }
+  .lj__section--surface { padding: var(--space-8) var(--space-6); }
+  .lj__reflection { padding: var(--space-8) var(--space-6) !important; }
+  .lj__thankyou-content { padding: var(--space-10) var(--space-6); }
   .lj__connector-center { min-width: unset; padding: var(--space-6); }
 }
 
