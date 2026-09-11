@@ -135,7 +135,7 @@ export const lollyJobData = {
     label: 'Employer Role',
     title: 'The Same Intelligence. A Different Decision.',
     desc: 'AI Match helps recruiters prioritize relevant candidates, understand their fit, and make more informed decisions with less manual screening.',
-    mockup: '/assets/projects/lolly-job/lolly-employer.png',
+    mockup: '/assets/projects/lolly-job/lolly-employerd.png',
     features: [
       {
         icon: '◎',
