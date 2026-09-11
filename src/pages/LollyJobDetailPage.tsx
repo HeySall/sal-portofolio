@@ -105,6 +105,20 @@ export default function LollyJobDetailPage() {
           </div>
         </section>
 
+        {/* ── Video ─────────────────────────────────── */}
+        <section className="lj__section lj__section--no-border">
+          <div className="lj__video-wrap">
+            <video
+              src="/assets/projects/lolly-job/lolly-vid.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="lj__video"
+            />
+          </div>
+        </section>
+
         {/* ── The Challenge ─────────────────────────── */}
         <section className="lj__section lj__section--surface lj__section--no-border">
           <div className="lj__two-col-header">
