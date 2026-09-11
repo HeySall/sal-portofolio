@@ -108,13 +108,12 @@ export default function LollyJobDetailPage() {
         {/* ── Video ─────────────────────────────────── */}
         <section className="lj__section lj__section--no-border">
           <div className="lj__video-wrap">
-            <video
-              src="/assets/projects/lolly-job/lolly-vid.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="lj__video"
+            <iframe
+              src="https://www.youtube.com/embed/E1rEIP1IJUA?autoplay=0&rel=0&modestbranding=1"
+              title="Lolly Job Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="lj__video-iframe"
             />
           </div>
         </section>
