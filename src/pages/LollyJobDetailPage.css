@@ -786,8 +786,8 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120%;
-  height: 120%;
+  width: 140%;
+  height: 140%;
   transform: translate(-50%, -50%);
   border: none;
   display: block;
