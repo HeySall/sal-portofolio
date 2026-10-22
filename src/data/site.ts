@@ -16,7 +16,7 @@ export const siteConfig = {
   stats: [
     {
       icon: 'sparkles',
-      value: '4+',
+      value: '5+',
       label: 'Years Experience',
       description: 'Designing digital products across multiple industries.',
     },
