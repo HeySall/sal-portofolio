@@ -60,6 +60,20 @@ export const projects: Project[] = [
     sections: [],
   },
   {
+    id: 'digiroom-referral',
+    title: 'Auto2000 Digiroom Referral',
+    subtitle: 'Customer Referral Experience',
+    tags: ['Automotive', 'App Design', 'UX Flow'],
+    status: 'live',
+    thumbnail: '/assets/projects/digiroom-referral.png',
+    overview:
+      'Designing an end-to-end referral experience that connects existing Digiroom users with prospective car buyers and helps Auto2000 capture information for sales follow-up.',
+    role: 'Product Designer',
+    duration: '1 Month',
+    year: '2025',
+    sections: [],
+  },
+  {
     id: 'aurelia',
     title: 'Aurelia',
     subtitle: 'Digital experience for modern luxury living.',

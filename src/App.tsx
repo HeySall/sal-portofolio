@@ -10,6 +10,7 @@ import DigiRoomDetailPage from './pages/DigiRoomDetailPage'
 import AureliaDetailPage from './pages/AureliaDetailPage'
 import CapitalDeskDetailPage from './pages/CapitalDeskDetailPage'
 import LollyJobDetailPage from './pages/LollyJobDetailPage'
+import DigiRoomReferralDetailPage from './pages/DigiRoomReferralDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function ScrollToTop() {
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/work/aurelia" element={<AureliaDetailPage />} />
           <Route path="/work/capital-desk" element={<CapitalDeskDetailPage />} />
           <Route path="/work/lolly-job" element={<LollyJobDetailPage />} />
+          <Route path="/work/digiroom-referral" element={<DigiRoomReferralDetailPage />} />
           <Route path="/work/:id" element={<ProjectDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
