@@ -105,34 +105,45 @@ export default function DigiRoomReferralDetailPage() {
         </section>
 
         {/* ── User Journeys ──────────────────────────── */}
-        <section className="dgr__section">
-          <div className="dgr__two-col">
-            <div className="dgr__journey-col">
-              <span className="dgr__label">{d.referrerJourney.label}</span>
-              <h3 className="dgr__journey-title">{d.referrerJourney.title}</h3>
-              <div className="dgr__steps">
-                {d.referrerJourney.steps.map((step, i) => (
-                  <div key={i} className="dgr__step">
-                    <span className="dgr__step-number">{step.number}</span>
-                    <div>
-                      <h4 className="dgr__step-title">{step.title}</h4>
-                      <p className="dgr__step-desc">{step.description}</p>
-                    </div>
+        <section className="dgr__section dgr__section--journeys">
+          <span className="dgr__label">{d.userJourneys.label}</span>
+          <h2 className="dgr__section-title">{d.userJourneys.title}</h2>
+          <p className="dgr__p">{d.userJourneys.description}</p>
+          
+          <div className="dgr__journey-panels">
+            {/* Left Panel - Referrer */}
+            <div className="dgr__journey-panel dgr__journey-panel--referrer">
+              <div className="dgr__journey-panel-header">
+                <h3 className="dgr__journey-panel-title">{d.userJourneys.referrer.user}</h3>
+              </div>
+              <div className="dgr__journey-steps-horizontal">
+                {d.userJourneys.referrer.steps.map((step, i) => (
+                  <div key={i} className="dgr__journey-step">
+                    <div className="dgr__journey-step-badge">{step.number}</div>
+                    <h4 className="dgr__journey-step-title">{step.title}</h4>
+                    <p className="dgr__journey-step-desc">{step.description}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="dgr__journey-col">
-              <span className="dgr__label">{d.recipientJourney.label}</span>
-              <h3 className="dgr__journey-title">{d.recipientJourney.title}</h3>
-              <div className="dgr__steps">
-                {d.recipientJourney.steps.map((step, i) => (
-                  <div key={i} className="dgr__step">
-                    <span className="dgr__step-number">{step.number}</span>
-                    <div>
-                      <h4 className="dgr__step-title">{step.title}</h4>
-                      <p className="dgr__step-desc">{step.description}</p>
-                    </div>
+            
+            {/* Connection indicator */}
+            <div className="dgr__journey-connection" aria-label="Referral link connects both journeys">
+              <div className="dgr__journey-connection-line"></div>
+              <div className="dgr__journey-connection-label">Referral Link</div>
+            </div>
+            
+            {/* Right Panel - Recipient */}
+            <div className="dgr__journey-panel dgr__journey-panel--recipient">
+              <div className="dgr__journey-panel-header">
+                <h3 className="dgr__journey-panel-title">{d.userJourneys.recipient.user}</h3>
+              </div>
+              <div className="dgr__journey-steps-horizontal">
+                {d.userJourneys.recipient.steps.map((step, i) => (
+                  <div key={i} className="dgr__journey-step">
+                    <div className="dgr__journey-step-badge">{step.number}</div>
+                    <h4 className="dgr__journey-step-title">{step.title}</h4>
+                    <p className="dgr__journey-step-desc">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -140,39 +151,42 @@ export default function DigiRoomReferralDetailPage() {
           </div>
         </section>
 
-        {/* ── Key Design Decisions ───────────────────── */}
-        <section className="dgr__section">
-          <span className="dgr__label">{d.keyDecisions.label}</span>
-          <h2 className="dgr__section-title">{d.keyDecisions.title}</h2>
-          <div className="dgr__decisions">
-            {d.keyDecisions.decisions.map((decision, i) => (
-              <div key={i} className="dgr__decision-card">
-                <div className="dgr__decision-header">
-                  <span className="dgr__decision-number">{decision.number}</span>
-                  <h3 className="dgr__decision-title">{decision.title}</h3>
+        {/* ── Design Approach ───────────────────────── */}
+        <section className="dgr__section dgr__section--design-approach">
+          <span className="dgr__label">{d.designApproach.label}</span>
+          <h2 className="dgr__section-title">{d.designApproach.title}</h2>
+          <p className="dgr__p">{d.designApproach.description}</p>
+          
+          <div className="dgr__proposals-grid">
+            {d.designApproach.proposals.map((proposal, i) => (
+              <div key={i} className="dgr__proposal-card">
+                <div className="dgr__proposal-number">{proposal.number}</div>
+                <h3 className="dgr__proposal-title">{proposal.title}</h3>
+                
+                <div className="dgr__proposal-content">
+                  <div className="dgr__proposal-field">
+                    <h4 className="dgr__proposal-field-label">Business need</h4>
+                    <p className="dgr__proposal-field-text">{proposal.businessNeed}</p>
+                  </div>
+                  
+                  <div className="dgr__proposal-field">
+                    <h4 className="dgr__proposal-field-label">Our proposal</h4>
+                    <p className="dgr__proposal-field-text">{proposal.proposal}</p>
+                  </div>
+                  
+                  <div className="dgr__proposal-field">
+                    <h4 className="dgr__proposal-field-label">Why this approach</h4>
+                    <p className="dgr__proposal-field-text">{proposal.rationale}</p>
+                  </div>
                 </div>
-                <div className="dgr__decision-mockup">
+                
+                <div className="dgr__proposal-mockup">
                   <img 
-                    src={decision.image} 
-                    alt={decision.title} 
+                    src={proposal.image} 
+                    alt={proposal.title} 
                     className="dgr__full-img"
-                    onError={e => { e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23f0f0f0" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" fill="%23999" font-family="sans-serif" font-size="14"%3EDecision ' + (i+1) + ' Mockup%3C/text%3E%3C/svg%3E' }}
+                    onError={e => { e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23f0f0f0" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" fill="%23999" font-family="sans-serif" font-size="14"%3EProposal ' + (i+1) + ' Screenshot%3C/text%3E%3C/svg%3E' }}
                   />
-                </div>
-                <div className="dgr__decision-content">
-                  <div className="dgr__decision-item">
-                    <h4 className="dgr__decision-subtitle">Rationale</h4>
-                    <p className="dgr__p">{decision.rationale}</p>
-                  </div>
-                  <div className="dgr__decision-item">
-                    <h4 className="dgr__decision-subtitle">Trade-off</h4>
-                    <p className="dgr__p">{decision.tradeoff}</p>
-                  </div>
-                  {decision.note && (
-                    <div className="dgr__decision-note">
-                      <p className="dgr__p dgr__p--sm">{decision.note}</p>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

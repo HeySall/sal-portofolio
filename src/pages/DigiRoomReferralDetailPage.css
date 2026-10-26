@@ -235,153 +235,261 @@
   background: #f0f0f0;
 }
 
-/* ── Two Column Layout ────────────────────────────────────────────────── */
+/* ── User Journeys (Revised) ───────────────────────────────────────────── */
 
-.dgr__two-col {
+.dgr__section--journeys {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+  padding: var(--space-12) var(--space-6);
+  margin-left: calc(var(--space-6) * -1);
+  margin-right: calc(var(--space-6) * -1);
+  border-radius: var(--radius-lg);
+}
+
+.dgr__journey-panels {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-10);
-  margin-top: var(--space-4);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  position: relative;
 }
 
-.dgr__journey-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.dgr__journey-title {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-top: var(--space-2);
-}
-
-/* ── Steps ────────────────────────────────────────────────────────────── */
-
-.dgr__steps {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.dgr__step {
-  display: flex;
-  gap: var(--space-3);
-  align-items: flex-start;
-}
-
-.dgr__step-number {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-accent);
-  color: white;
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-}
-
-.dgr__step-title {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: var(--space-1);
-}
-
-.dgr__step-desc {
-  font-size: var(--font-size-sm);
-  line-height: 1.65;
-  color: var(--color-text-secondary);
-}
-
-/* ── Key Design Decisions ─────────────────────────────────────────────── */
-
-.dgr__decisions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-10);
-  margin-top: var(--space-4);
-}
-
-.dgr__decision-card {
-  background: var(--color-surface);
+.dgr__journey-panel {
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: relative;
 }
 
-.dgr__decision-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-5) var(--space-6);
+.dgr__journey-panel--referrer {
+  border-top: 3px solid var(--color-accent);
+}
+
+.dgr__journey-panel--recipient {
+  border-top: 3px solid #2563eb;
+}
+
+.dgr__journey-panel-header {
+  padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--color-border);
-  background: #fafbfc;
 }
 
-.dgr__decision-number {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-accent);
-  color: white;
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-}
-
-.dgr__decision-title {
-  font-size: var(--font-size-lg);
+.dgr__journey-panel-title {
+  font-size: var(--font-size-base);
   font-weight: 700;
   color: var(--color-text);
-  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
-.dgr__decision-mockup {
-  width: 100%;
-  overflow: hidden;
-  background: #f8f9fa;
-  aspect-ratio: 3 / 2;
-}
-
-.dgr__decision-mockup .dgr__full-img {
-  aspect-ratio: 3 / 2;
-}
-
-.dgr__decision-content {
-  padding: var(--space-6);
+.dgr__journey-steps-horizontal {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
 }
 
-.dgr__decision-item {
+.dgr__journey-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+.dgr__journey-step:not(:last-child) {
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.dgr__journey-step-badge {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.dgr__journey-panel--recipient .dgr__journey-step-badge {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.dgr__journey-step-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.dgr__journey-step-desc {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Connection indicator between panels */
+.dgr__journey-connection {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.dgr__journey-connection-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--color-accent), #2563eb);
+  position: relative;
+}
+
+.dgr__journey-connection-line::before,
+.dgr__journey-connection-line::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.dgr__journey-connection-line::before {
+  top: -4px;
+}
+
+.dgr__journey-connection-line::after {
+  bottom: -4px;
+  background: #2563eb;
+}
+
+.dgr__journey-connection-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Design Approach (Revised) ─────────────────────────────────────────── */
+
+.dgr__section--design-approach {
+  background: var(--color-bg);
+}
+
+.dgr__proposals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.dgr__proposal-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.dgr__proposal-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.dgr__proposal-number {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  z-index: 2;
+}
+
+.dgr__proposal-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  padding: var(--space-5) var(--space-6);
+  padding-top: calc(var(--space-5) + 44px);
+  background: #fafbfc;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dgr__proposal-content {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex-grow: 1;
+}
+
+.dgr__proposal-field {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
-.dgr__decision-subtitle {
-  font-size: var(--font-size-sm);
+.dgr__proposal-field-label {
+  font-size: var(--font-size-xs);
   font-weight: 700;
-  color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--color-text-tertiary);
 }
 
-.dgr__decision-note {
-  padding: var(--space-4);
-  background: #fffbeb;
-  border-left: 3px solid #fbbf24;
-  border-radius: var(--radius-sm);
-  margin-top: var(--space-2);
+.dgr__proposal-field-text {
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.dgr__proposal-mockup {
+  width: 100%;
+  background: #f8f9fa;
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  position: relative;
+}
+
+.dgr__proposal-mockup .dgr__full-img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 /* ── Visual Showcase ──────────────────────────────────────────────────── */
@@ -602,6 +710,27 @@
     gap: var(--space-8);
   }
 
+  .dgr__journey-panels {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .dgr__journey-connection {
+    position: static;
+    transform: none;
+    margin: var(--space-4) 0;
+    pointer-events: all;
+  }
+  
+  .dgr__journey-connection-line {
+    height: 40px;
+  }
+  
+  .dgr__proposals-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
   .dgr__reflection-inner {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -633,6 +762,25 @@
 
   .dgr__section {
     padding: var(--space-8) 0;
+  }
+  
+  .dgr__section--journeys {
+    padding: var(--space-8) var(--space-5);
+    margin-left: calc(var(--space-5) * -1);
+    margin-right: calc(var(--space-5) * -1);
+  }
+  
+  .dgr__journey-panel {
+    padding: var(--space-5);
+  }
+  
+  .dgr__proposal-content {
+    padding: var(--space-4);
+  }
+  
+  .dgr__proposal-title {
+    padding: var(--space-4) var(--space-5);
+    padding-top: calc(var(--space-4) + 44px);
   }
 
   .dgr__hero-meta {
@@ -670,6 +818,37 @@
   .dgr__section {
     padding: var(--space-6) 0;
     gap: var(--space-4);
+  }
+  
+  .dgr__section--journeys {
+    padding: var(--space-6) var(--space-4);
+    margin-left: calc(var(--space-4) * -1);
+    margin-right: calc(var(--space-4) * -1);
+  }
+  
+  .dgr__journey-panel {
+    padding: var(--space-4);
+  }
+  
+  .dgr__journey-step-title {
+    font-size: var(--font-size-sm);
+  }
+  
+  .dgr__journey-step-desc {
+    font-size: var(--font-size-xs);
+  }
+  
+  .dgr__proposal-number {
+    width: 36px;
+    height: 36px;
+    top: var(--space-3);
+    left: var(--space-3);
+  }
+  
+  .dgr__proposal-title {
+    font-size: var(--font-size-base);
+    padding: var(--space-3) var(--space-4);
+    padding-top: calc(var(--space-3) + 40px);
   }
 
   .dgr__hero-titles {

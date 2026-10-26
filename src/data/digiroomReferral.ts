@@ -48,104 +48,114 @@ export const digiroomReferralData = {
     diagramImage: '/assets/projects/digiroom-referral/dgr-experience-map.png',
   },
 
-  referrerJourney: {
-    label: 'Referrer Journey',
-    title: 'Existing Digiroom User',
-    steps: [
-      {
-        number: '01',
-        title: 'Access referral feature',
-        description: 'Open the account menu in Digiroom and access the Referral feature',
-      },
-      {
-        number: '02',
-        title: 'View referral link',
-        description: 'View the referral information and unique referral link',
-      },
-      {
-        number: '03',
-        title: 'Share invitation',
-        description: 'Copy the link or share it through WhatsApp',
-      },
-      {
-        number: '04',
-        title: 'Recipient opens',
-        description: 'The recipient opens the shared invitation',
-      },
-    ],
+  userJourneys: {
+    label: 'USER JOURNEYS',
+    title: 'Two journeys, one connection',
+    description:
+      'The referral experience connects existing Digiroom users with potential car buyers, leading to a submission that can be followed up by the Auto2000 team.',
+    referrer: {
+      user: 'Existing Digiroom User',
+      accentColor: '#0d6e6e',
+      steps: [
+        {
+          number: '01',
+          title: 'Access referral feature',
+          description: 'Open the account menu in Digiroom and access the Referral feature.',
+        },
+        {
+          number: '02',
+          title: 'View referral link',
+          description: 'View the referral information and unique referral link.',
+        },
+        {
+          number: '03',
+          title: 'Share invitation',
+          description: 'Copy the link or share it through WhatsApp.',
+        },
+        {
+          number: '04',
+          title: 'Recipient opens',
+          description: 'The recipient opens the shared invitation.',
+        },
+      ],
+    },
+    recipient: {
+      user: 'Referral Recipient',
+      accentColor: '#2563eb',
+      steps: [
+        {
+          number: '01',
+          title: 'Open landing page',
+          description: 'Open the referral landing page from the shared link.',
+        },
+        {
+          number: '02',
+          title: 'Complete form',
+          description: 'Provide personal information and vehicle purchase interest.',
+        },
+        {
+          number: '03',
+          title: 'Verify phone number',
+          description: 'Verify the phone number through WhatsApp OTP.',
+        },
+        {
+          number: '04',
+          title: 'Receive confirmation',
+          description: 'Receive a submission confirmation.',
+        },
+        {
+          number: '05',
+          title: 'Eligible for follow-up',
+          description: 'Become eligible for follow-up from the Auto2000 team.',
+        },
+      ],
+    },
   },
 
-  recipientJourney: {
-    label: 'Recipient Journey',
-    title: 'Referral Recipient',
-    steps: [
+  designApproach: {
+    label: 'DESIGN APPROACH',
+    title: 'From business goals to design solutions',
+    description:
+      'Each design decision addresses a specific business need, connecting referral sharing, lead information collection, and sales follow-up into one cohesive experience.',
+    proposals: [
       {
         number: '01',
-        title: 'Open landing page',
-        description: 'Open the referral landing page from the shared link',
-      },
-      {
-        number: '02',
-        title: 'Complete form',
-        description: 'Provide personal information and vehicle purchase interest',
-      },
-      {
-        number: '03',
-        title: 'Verify phone number',
-        description: 'Verify the phone number through WhatsApp OTP',
-      },
-      {
-        number: '04',
-        title: 'Receive confirmation',
-        description: 'Receive a submission confirmation',
-      },
-      {
-        number: '05',
-        title: 'Eligible for follow-up',
-        description: 'Become eligible for follow-up from the Auto2000 team',
-      },
-    ],
-  },
-
-  keyDecisions: {
-    label: 'Key Design Decisions',
-    title: 'Four critical decisions that shaped the experience',
-    decisions: [
-      {
-        number: '01',
-        title: 'Referral link and WhatsApp sharing',
+        title: 'Simplify referral sharing',
+        businessNeed:
+          'Make it easier for existing Digiroom users to introduce prospective buyers to Auto2000.',
+        proposal: 'Provide a referral link with copy and WhatsApp sharing options.',
         rationale:
-          'The sharing flow needed to make it convenient for existing users to introduce potential buyers while ensuring recipients understand where the referral link leads.',
-        tradeoff:
-          'Making sharing easy through WhatsApp means the recipient journey starts outside the app, requiring clear landing page messaging to establish context and trust.',
+          'Allows users to share the invitation through familiar, readily available channels.',
         image: '/assets/projects/digiroom-referral/dgr-decision-1.png',
       },
       {
         number: '02',
-        title: 'Structured referral form',
+        title: 'Structure lead information',
+        businessNeed:
+          'Capture initial personal information and vehicle purchase interest.',
+        proposal:
+          'Provide a structured referral form with relevant personal details, vehicle model, and preferred location.',
         rationale:
-          'The form captures initial information about the recipient and their vehicle interest to support sales follow-up. Fields include: name, phone number, car model, province, city, and purchase branch.',
-        tradeoff:
-          'Collecting useful information for the sales team needs to be balanced with keeping form completion manageable for recipients who may be exploring their interest.',
+          'Organizes the information intended to support sales follow-up while keeping the form focused on the information being requested.',
         image: '/assets/projects/digiroom-referral/dgr-decision-2.png',
       },
       {
         number: '03',
-        title: 'WhatsApp OTP verification',
+        title: 'Add phone verification',
+        businessNeed:
+          'Include a phone verification step before form submission is completed.',
+        proposal: 'Integrate WhatsApp OTP verification.',
         rationale:
-          'Phone verification through WhatsApp OTP helps confirm contact information in the submission flow. The design provides clear instructions, input feedback, and error handling.',
-        tradeoff:
-          'Adding a verification step increases friction in the flow, but helps ensure the submitted contact information can be used for follow-up.',
+          'Adds a verification step for the submitted phone number before the flow is completed.',
         image: '/assets/projects/digiroom-referral/dgr-decision-3.png',
-        note: 'OTP verification does not guarantee all submissions are from genuinely interested buyers.',
       },
       {
         number: '04',
-        title: 'Submission confirmation',
+        title: 'Clarify submission status',
+        businessNeed: 'Give recipients clear feedback after submitting the form.',
+        proposal: 'Display a submission confirmation state.',
         rationale:
-          'The success state communicates that the recipient has completed the referral form and sets appropriate expectations for what happens next.',
-        tradeoff:
-          'The confirmation needs to close the user\'s immediate task while being honest about the timeline and nature of the follow-up process.',
+          'Confirms that the form submission has been completed and communicates the next step when supported by the actual product flow.',
         image: '/assets/projects/digiroom-referral/dgr-decision-4.png',
       },
     ],
