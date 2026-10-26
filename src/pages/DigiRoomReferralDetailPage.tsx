@@ -29,7 +29,9 @@ export default function DigiRoomReferralDetailPage() {
             </Link>
             <div className="dgr__hero-titles">
               <h1 className="dgr__hero-title-main">{d.hero.titleMain}</h1>
-              <h2 className="dgr__hero-title-accent">{d.hero.titleAccent}</h2>
+              {d.hero.titleAccent && (
+                <h2 className="dgr__hero-title-accent">{d.hero.titleAccent}</h2>
+              )}
             </div>
             <p className="dgr__hero-desc">{d.hero.description}</p>
             <div className="dgr__hero-meta">

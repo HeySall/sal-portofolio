@@ -1,14 +1,14 @@
 export const digiroomReferralData = {
   hero: {
     image: '/assets/projects/digiroom-referral/dgr-hero.png',
-    titleMain: 'Turning Customer Recommendations',
-    titleAccent: 'into Actionable Sales Leads',
+    titleMain: 'From Customer Referrals to Meaningful Sales Conversations',
+    titleAccent: '',
     description:
-      'Designing an end-to-end referral experience that connects existing Digiroom users with prospective car buyers and helps Auto2000 capture information for sales follow-up.',
+      'Designing an end-to-end referral experience that helps Digiroom users introduce prospective car buyers to Auto2000.',
     meta: [
-      { label: 'Product', value: 'Auto2000 Digiroom' },
       { label: 'Role', value: 'Product Designer' },
       { label: 'Scope', value: 'UX Flow & UI Design' },
+      { label: 'Product', value: 'Auto2000 Digiroom' },
       { label: 'Status', value: 'In Development' },
     ],
   },
