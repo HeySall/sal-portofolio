@@ -21,7 +21,7 @@ export default function Experience() {
             Experience
           </motion.span>
           <motion.h2 className="experience__heading heading-lg" variants={staggerItemVariants}>
-            Four years across teams,<br />industries, and surfaces.
+            Five years across teams, industries,<br />and surfaces.
           </motion.h2>
         </motion.div>
 
@@ -39,10 +39,13 @@ export default function Experience() {
               variants={staggerItemVariants}
               custom={index}
             >
-              <div className="experience__period">{item.period}</div>
+              <div className="experience__company-col">
+                <span className="experience__company">{item.company}</span>
+                <span className="experience__period">{item.period}</span>
+              </div>
               <div className="experience__role">{item.role}</div>
               <div className="experience__desc">{item.description}</div>
-              <div className="experience__location">
+              <div className="experience__location-col">
                 <span>{item.location}</span>
                 <span className="experience__location-type">{item.locationType}</span>
               </div>
