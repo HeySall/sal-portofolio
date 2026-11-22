@@ -19,6 +19,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'creekmore',
+    title: 'Creekmore',
+    subtitle: 'Turning an agency homepage into a lead magnet',
+    tags: ['Web Design', 'Marketing'],
+    status: 'live',
+    thumbnail: '/assets/projects/creekmore.png',
+    overview:
+      'A homepage redesign concept for Creekmore Marketing that transforms the site from an agency brochure into a results-first story that small business owners can understand and act on.',
+    role: 'UI/UX Designer',
+    duration: '2 weeks',
+    year: '2025',
+    sections: [],
+  },
+  {
     id: 'digiroom-auto2000',
     title: 'Credit Simulation — Digiroom Auto2000',
     subtitle: 'Credit Simulation Enhancement',

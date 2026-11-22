@@ -29,8 +29,7 @@ export const siteConfig = {
     {
       icon: 'layers',
       value: 'End to End',
-      label: 'From research to final design.',
-      description: 'Turning complex workflows and data heavy system into intuitive experience.',
+      label: 'From research to final design.',      description: 'Turning complex workflows and data heavy system into intuitive experience.',
     },
   ],
   footer: {

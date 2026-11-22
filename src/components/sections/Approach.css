@@ -29,6 +29,7 @@
   font-family: Georgia, 'Times New Roman', serif;
   font-weight: 400;
   font-size: 0.95em;
+  color: var(--color-accent);
 }
 
 .approach__comma,

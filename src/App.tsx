@@ -6,6 +6,7 @@ import Navbar from './components/layout/Navbar'
 import HomePage from './pages/HomePage'
 import AllWorksPage from './pages/AllWorksPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import CreekmoreDetailPage from './pages/CreekmoreDetailPage'
 import DigiRoomDetailPage from './pages/DigiRoomDetailPage'
 import AureliaDetailPage from './pages/AureliaDetailPage'
 import CapitalDeskDetailPage from './pages/CapitalDeskDetailPage'
@@ -33,6 +34,7 @@ export default function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<AllWorksPage />} />
+          <Route path="/work/creekmore" element={<CreekmoreDetailPage />} />
           <Route path="/work/digiroom-auto2000" element={<DigiRoomDetailPage />} />
           <Route path="/work/aurelia" element={<AureliaDetailPage />} />
           <Route path="/work/capital-desk" element={<CapitalDeskDetailPage />} />
