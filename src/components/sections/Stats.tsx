@@ -26,11 +26,10 @@ export default function Stats() {
             animate={controls}
           >
             <motion.h2 className="stats__heading heading-lg" variants={staggerItemVariants}>
-              A few things I've quietly helped ship.
+              Designing with intention, thinking beyond the interface.
             </motion.h2>
             <motion.p className="stats__desc text-secondary" variants={staggerItemVariants}>
-              I design digital experiences that balance research, systems thinking, and usability—turning
-              complex challenges into products that feel clear, intuitive, and scalable.
+              Hi, I'm Sal! a UI/UX Designer with 5 years of experience designing web and mobile products. I'm curious about how people interact with digital products and what makes an experience work well. I enjoy digging into problems, exploring different ideas, and finding ways to turn complex requirements into simple, useful experiences for both users and businesses.
             </motion.p>
           </motion.div>
 

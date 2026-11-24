@@ -23,13 +23,14 @@ export const siteConfig = {
     {
       icon: 'box',
       value: '15+',
-      label: 'Product Launched',
-      description: 'Web and mobile products successfully released to real users.',
+      label: 'Products Designed',
+      description: "Web and mobile products I've contributed to, from early concepts to launch.",
     },
     {
       icon: 'layers',
       value: 'End to End',
-      label: 'From research to final design.',      description: 'Turning complex workflows and data heavy system into intuitive experience.',
+      label: 'From Ideas to Execution',
+      description: 'Working across research, user flows, interface design, and developer handoff.',
     },
   ],
   footer: {
